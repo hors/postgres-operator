@@ -751,6 +751,9 @@ var PostgresCRDResourceValidation = apiextv1.CustomResourceValidation{
 						Type:     "object",
 						Required: []string{"size"},
 						Properties: map[string]apiextv1.JSONSchemaProps{
+							"iops": {
+								Type: "integer",
+							},
 							"size": {
 								Type:        "string",
 								Description: "Value must not be zero",
@@ -761,6 +764,9 @@ var PostgresCRDResourceValidation = apiextv1.CustomResourceValidation{
 							},
 							"subPath": {
 								Type: "string",
+							},
+							"throughput": {
+								Type: "integer",
 							},
 						},
 					},
